@@ -4,6 +4,9 @@ import os
 import directory as d 
 import input_check as ic
 
+
+option_list = ['callibrate', 'load', 'new']
+
 def callibrate():
     pass
 
@@ -20,8 +23,6 @@ def new():
     selected = select_choice(dir_list)
     # print(dir_list[selected])
     
-option_list = ['callibrate', 'load', 'new']
-
 def main_menu():
     print('Welcome to Photometry of Ordinary Objects. Select what you would like to do from the list below:')
     list_choices(option_list)

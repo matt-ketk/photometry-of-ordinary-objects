@@ -1,2 +1,6 @@
 IMAGES = '../images/'
-CALLIBRATION = '../callibration'
+CALLIBRATION = '../callibration/'
+# saves
+DATA = '../data'
+LUMINANCE  = DATA + '/luminance/'
+RAW = DATA + '/raw/'
