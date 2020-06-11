@@ -7,18 +7,32 @@ import matplotlib
 import matplotlib.pyplot as plt
 import cupy as cp
 import numpy as np
-from matplotlib.colors import LogNorm 
+import matplotlib.colors as pltcolor
+from skimage import color
 # modules
 import directory as d
 import cl_interface as cl
 import photometry as ph
 import debugtools as db
 import filehandling as fh
+import rgbapprox as rgba
 def main():
     # cl.main_menu()
     # cplotmesh_view(d.LUMINANCE + 'sample_1.csv')
     # import_raw()
-    fh.import_from_images()
+    # fh.import_from_images()
+    test = np.load(d.RAW + 'DSC_1342.npy')
+    plt.title('Color Temperature of Plasma Ball (K)')
+    wavelengths = rgba.get_wavelengths(test)
+    irrad = ph.stefan_boltzmann(test)
+
+    # print(irrad.shape)
+
+    plt.imshow(ph.wavelength_to_temperature(wavelengths), origin='upper')
+    # plt.imshow(ph.wavelength_to_temperature(wavelengths), origin='upper')
+    plt.colorbar()
+    plt.show()
+    print(np.sum(irrad * ph.pixel_area))
 
 
 

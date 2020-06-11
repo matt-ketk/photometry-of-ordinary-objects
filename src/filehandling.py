@@ -1,7 +1,7 @@
 # imports
-import cupy as cp
+# import cupy as cp
 import numpy as np
-import rawpy
+# import rawpy
 import os
 from PIL import Image
 # modules

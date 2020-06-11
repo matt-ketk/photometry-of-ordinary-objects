@@ -1,3 +1,7 @@
 *.NEF
 *.jpg
+*.tiff
+*.npy
+*.csv
+*.pyc
 /imagetest
